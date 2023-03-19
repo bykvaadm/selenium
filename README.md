@@ -16,10 +16,12 @@
 
 # Запуск
 
+- перейти в директорию скачанного с github репозитория
+- заполнить доменами файл domains.txt (по 1 домену в строке)
 - docker run -d -p 4444:4444 --shm-size=2g --name=selenium -v "$(pwd)":/etc/selenium -v /var/lib/screenshot:/var/lib/screenshot --rm selenuim:latest
-- docker exec -ti selenium bash
-- python3 /etc/selenium/update-db.py
-- python3 /etc/selenium/screenshot.py
+- docker exec -ti selenium bash # заходим в контейнер
+- python3 /etc/selenium/update-db.py # команда выполянется в контейнере
+- python3 /etc/selenium/screenshot.py # команда выполянется в контейнере
 
 # Результат
 
@@ -27,4 +29,4 @@
 
 # почему не готовый контейнер
 
-Скрипт сыроват и написан под конкретный случай, проще рассказать как его собирать, чтобы вы могли его править под себя
+Скрипт сыроват и написан под конкретный случай, проще рассказать как его собирать, чтобы вы могли править скрипты под себя (может не только 80, 443 нужен)
